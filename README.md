@@ -1,5 +1,8 @@
 # pikachu
-CSSピカチュウ→ https://suguhito65.github.io/pikachu/
+
+# URL
+
+- https://suguhito65.github.io/pikachu/
 
 # イメージ
 
