@@ -1,4 +1,4 @@
-# Pikachu
+# ピカチュウ
 
 # URL
 
