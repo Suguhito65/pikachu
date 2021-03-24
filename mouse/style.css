@@ -43,7 +43,7 @@ body {
   height: 3em;
   margin: -1em 0 0 -4.4em;
   background-color: #ff0;
-  border: 0.25em solid #000;
+  border: 0.2em solid #000;
   transform: rotate(-6deg);
   border-radius: 0 0 40% 60% / 0 0 100% 100%;
 }
@@ -67,7 +67,7 @@ body {
   height: 3em;
   margin: -0.9em 0 0 -0.5em;
   background-color: #ff0;
-  border: 0.25em solid #000;
+  border: 0.2em solid #000;
   transform: rotate(30deg);
   border-radius: 0 0 60% 40% / 0 0 100% 100%;
 }
