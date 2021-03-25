@@ -8,4 +8,4 @@
 
 # イメージ
 
-![](https://i.gyazo.com/ea0fb578f79d725e8db71506b6a745e3.png)
+![](https://i.gyazo.com/558fd067a1be1086508e7e241a4a152a.png)
