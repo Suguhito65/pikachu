@@ -1,0 +1,275 @@
+@mixin position($margin) {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: $margin;
+}
+
+@mixin hw($height, $width) {
+  height: $height;
+  width: $width;
+}
+
+@mixin border($border) {
+  border: $border solid #000;
+}
+
+$body: #ff0;
+$body-s: #ffd700;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.pikachu {
+  @include position(-15em);
+  @include hw(30em, 30em);
+}
+
+.head {
+  @include position(-7em 0 0 -4em);
+  @include hw(8em, 8em);
+  @include border(0.3em);
+  background: $body;
+  border-radius: 50% 45% 30% 50%;
+  z-index: 2;
+
+  &::before {
+    @include position(2.5em 0 0 0.21em);
+    @include hw(3.3em, 7.2em);
+    content: '';
+    background: inherit;
+    border-radius: 40% 20% 20% 30% / 80% 80% 20% 20%;
+    transform: translate(-50%,-50%);
+  }
+
+  &::after /* cheep */ {
+    @include position(-0.7em 0 0 1.5em);
+    @include hw(1.2em, 1.1em);
+    content: '';
+    background: #f00;
+    border-radius: 50%;
+  }
+
+  .left-eye {
+    @include position(-2.2em 0 0 -3.2em);
+    @include hw(1.1em, 0.6em);
+    background: #000;
+    border-radius: 50%;
+    transform: rotate(20deg);
+  
+    &::before {
+      @include position(-0.3em 0 0 -0.15em);
+      @include hw(0.25em, 0.25em);
+      content: '';
+      background: #fff;
+      border-radius: 50%;
+    }
+  
+    &::after /* cheep */ {
+      @include position(1.2em 0 0 -0.2em);
+      @include hw(1em, 0.4em);
+      content: '';
+      background: #f00;
+      border-radius: 50%;
+      transform: rotate(-18deg);
+    }
+  }
+
+  .right-eye {
+    @include position(-2.3em 0 0 0em);
+    @include hw(1.2em, 1.2em);
+    background: #000;
+    border-radius: 50%;
+  
+    &::before {
+      @include position(-0.4em 0 0 -0.35em);
+      @include hw(0.4em, 0.4em);
+      content: '';
+      background: #fff;
+      border-radius: 50%;
+    }
+  }
+
+  .nose {
+    @include position(-1.1em 0 0 -1.9em);
+    @include hw(0, 0);
+    // 三角形の作り方
+    border-left: 0.27em solid transparent;
+    border-right: 0.27em solid transparent;
+    border-bottom: 0.3em solid  #000;
+    transform: rotate(180deg);
+  
+    &::before {
+      @include position(-3.5em 0 0 -3.5em);
+      @include hw(1em, 5em);
+      content: '';
+      background: $body-s;
+      border-top-left-radius: 3em 1em;
+      border-top-right-radius: 2em 1em;
+      box-shadow: inset 0 0.5em $body;
+    }
+  }
+
+  .mouth {
+    @include position(-0.65em 0 0 -1.6em);
+    @include hw(0.8em, 1.5em);
+    background: $body;
+    border-bottom-right-radius: 1em 0.5em;
+    border-bottom: 0.18em solid #000;
+    transform: rotate(45deg);
+
+    &::before {
+      @include position(0.6em 0 0 -1.75em);
+      @include hw(0.8em, 1.25em);
+      content: '';
+      background-color: inherit;
+      border-bottom-left-radius: 1em 0.5em;
+      border-bottom: 0.18em solid #000;
+      transform: rotate(-90deg);
+    }
+
+    &::after {
+      @include position(-4.7em 0 0 0.4em);
+      @include hw(0.8em, 0.7em);
+      content: '';
+      background: inherit;
+      transform: rotate(25deg);
+    }
+  }
+}
+
+.left-ear {
+  @include position(-10em 0 0 -3.4em);
+  @include hw(6em, 1.5em);
+  @include border(0.2em);
+  background: $body-s;
+  border-top-right-radius: 0.65em 4em;
+  border-top-left-radius: 0.85em 4em;
+  box-shadow: inset 0em 1.5em  #000;
+  transform: rotate(-10deg);
+}
+
+.right-ear {
+  @include position(-7.2em 0 0 2.2em);
+  @include hw(1.5em, 5em);
+  @include border(0.25em);
+  background: $body;
+  border-top-left-radius: 4em 0.75em;
+  border-bottom-left-radius: 4em 0.75em;
+  box-shadow: inset 1em 0em  #000;
+  transform: rotate(160deg);
+}
+
+.body {
+  @include position(2em 0 0 0);
+  @include hw(10em, 9em);
+  @include border(0.3em);
+  background: $body;
+  border-radius: 40% 20% 20% 30% / 80% 80% 20% 20%;
+  box-shadow: inset 0 -0.5em $body-s;
+  transform: translate(-50%,-50%);
+  // left-handのはみ出しを消す
+  overflow: hidden;
+  z-index: 1;
+}
+
+.left-hand {
+  @include position(-1em 0 0 -4.4em);
+  @include hw(3em, 2em);
+  @include border(0.2em);
+  background: $body;
+  border-radius: 0 0 40% 60% / 0 0 100% 100%;
+  transform: rotate(-6deg);
+
+  &::before {
+    @include position(-1.6em 0 0 -1em);
+    @include hw(0.4em, 2.2em);
+    content: '';
+    background: inherit;
+  }
+}
+
+.right-hand {
+  @include position(-0.9em 0 0 -0.5em);
+  @include hw(3em, 2em);
+  @include border(0.2em);
+  background: $body;
+  border-radius: 0 0 60% 40% / 0 0 100% 100%;
+  transform: rotate(30deg);
+
+  &::before {
+    @include position(-1.54em 0 0 -1em);
+    @include hw(0.4em, 2.2em);
+    content: '';
+    background: inherit;
+  }
+}
+
+.left-foot {
+  @include position(5.5em 0 0 -5em);
+  @include hw(1.5em, 4em);
+  @include border(0.3em);
+  background: $body-s;
+  border-top-left-radius: 3em 0.5em;
+  border-bottom-left-radius: 3em 1em;
+  transform: rotate(-30deg);
+}
+
+.right-foot {
+  @include position(5.8em 0 0 1em);
+  @include hw(1.5em, 4em);
+  @include border(0.3em);
+  background: $body-s;
+  border-top-right-radius: 3em 0.5em;
+  border-bottom-right-radius: 3em 1em;
+  transform: rotate(30deg);
+}
+
+.tail {
+  @include position(3.2em 0 0 3.6em);
+  @include hw(1.5em, 1.8em);
+  @include border(0.3em);
+  background: #8b4513;
+  transform: skewX(-10deg) rotate(-20deg);
+  animation: tail-move .7s infinite alternate ease-in-out;
+  
+  &::before {
+    @include position(-3.1em 0 0 -0.4em);
+    @include hw(2em, 2.5em);
+    @include border(0.3em);
+    content: '';
+    background: $body-s;
+  }
+
+  &::after {
+    @include position(-6.5em 0 0 0.8em);
+    @include hw(4em, 5em);
+    @include border(0.3em);
+    content: '';
+    background: $body-s;
+  }
+
+  .tail2 {
+    @include position(-2.85em 0 0 0.7em);
+    @include hw(1.1em, 1.8em);
+    background: $body-s;
+    z-index: 1;
+  }
+}
+
+.shadow {
+  @include position(6em 0 0 -5.5em);
+  @include hw(2em, 14em);
+  background: rgba(0,0,0,0.1);
+  border-radius: 50%;
+  z-index: -1;
+}
+
+@keyframes tail-move {
+  100% {
+    transform: rotate(2deg);
+  }
+}
