@@ -14,8 +14,8 @@
   border: $border solid #000;
 }
 
-$body: #ff0;
-$body-s: #ffd700;
+$body: #ffd700;
+$body-s: #ffb700;
 
 * {
   margin: 0;
@@ -26,6 +26,9 @@ $body-s: #ffd700;
 .pikachu {
   @include position(-15em);
   @include hw(30em, 30em);
+  background: #ffd;
+  border-radius: 50%;
+  z-index: -2;
 }
 
 .head {
@@ -54,12 +57,27 @@ $body-s: #ffd700;
   }
 
   .left-eye {
+    @include position(-2.3em 0 0 0em);
+    @include hw(1.2em, 1.2em);
+    background: #000;
+    border-radius: 50%;
+  
+    &::before {
+      @include position(-0.4em 0 0 -0.35em);
+      @include hw(0.4em, 0.4em);
+      content: '';
+      background: #fff;
+      border-radius: 50%;
+    }
+  }
+
+  .right-eye {
     @include position(-2.2em 0 0 -3.2em);
     @include hw(1.1em, 0.6em);
     background: #000;
     border-radius: 50%;
     transform: rotate(20deg);
-  
+
     &::before {
       @include position(-0.3em 0 0 -0.15em);
       @include hw(0.25em, 0.25em);
@@ -75,21 +93,6 @@ $body-s: #ffd700;
       background: #f00;
       border-radius: 50%;
       transform: rotate(-18deg);
-    }
-  }
-
-  .right-eye {
-    @include position(-2.3em 0 0 0em);
-    @include hw(1.2em, 1.2em);
-    background: #000;
-    border-radius: 50%;
-  
-    &::before {
-      @include position(-0.4em 0 0 -0.35em);
-      @include hw(0.4em, 0.4em);
-      content: '';
-      background: #fff;
-      border-radius: 50%;
     }
   }
 
@@ -142,17 +145,6 @@ $body-s: #ffd700;
 }
 
 .left-ear {
-  @include position(-10em 0 0 -3.4em);
-  @include hw(6em, 1.5em);
-  @include border(0.2em);
-  background: $body-s;
-  border-top-right-radius: 0.65em 4em;
-  border-top-left-radius: 0.85em 4em;
-  box-shadow: inset 0em 1.5em  #000;
-  transform: rotate(-10deg);
-}
-
-.right-ear {
   @include position(-7.2em 0 0 2.2em);
   @include hw(1.5em, 5em);
   @include border(0.25em);
@@ -161,6 +153,17 @@ $body-s: #ffd700;
   border-bottom-left-radius: 4em 0.75em;
   box-shadow: inset 1em 0em  #000;
   transform: rotate(160deg);
+}
+
+.right-ear {
+  @include position(-10em 0 0 -3.4em);
+  @include hw(6em, 1.5em);
+  @include border(0.2em);
+  background: $body-s;
+  border-top-right-radius: 0.65em 4em;
+  border-top-left-radius: 0.85em 4em;
+  box-shadow: inset 0em 1.5em  #000;
+  transform: rotate(-10deg);
 }
 
 .body {
@@ -177,22 +180,6 @@ $body-s: #ffd700;
 }
 
 .left-hand {
-  @include position(-1em 0 0 -4.4em);
-  @include hw(3em, 2em);
-  @include border(0.2em);
-  background: $body;
-  border-radius: 0 0 40% 60% / 0 0 100% 100%;
-  transform: rotate(-6deg);
-
-  &::before {
-    @include position(-1.6em 0 0 -1em);
-    @include hw(0.4em, 2.2em);
-    content: '';
-    background: inherit;
-  }
-}
-
-.right-hand {
   @include position(-0.9em 0 0 -0.5em);
   @include hw(3em, 2em);
   @include border(0.2em);
@@ -208,17 +195,23 @@ $body-s: #ffd700;
   }
 }
 
-.left-foot {
-  @include position(5.5em 0 0 -5em);
-  @include hw(1.5em, 4em);
-  @include border(0.3em);
-  background: $body-s;
-  border-top-left-radius: 3em 0.5em;
-  border-bottom-left-radius: 3em 1em;
-  transform: rotate(-30deg);
+.right-hand {
+  @include position(-1em 0 0 -4.4em);
+  @include hw(3em, 2em);
+  @include border(0.2em);
+  background: $body;
+  border-radius: 0 0 40% 60% / 0 0 100% 100%;
+  transform: rotate(-6deg);
+
+  &::before {
+    @include position(-1.6em 0 0 -1em);
+    @include hw(0.4em, 2.2em);
+    content: '';
+    background: inherit;
+  }
 }
 
-.right-foot {
+.left-foot {
   @include position(5.8em 0 0 1em);
   @include hw(1.5em, 4em);
   @include border(0.3em);
@@ -226,6 +219,16 @@ $body-s: #ffd700;
   border-top-right-radius: 3em 0.5em;
   border-bottom-right-radius: 3em 1em;
   transform: rotate(30deg);
+}
+
+.right-foot {
+  @include position(5.5em 0 0 -5em);
+  @include hw(1.5em, 4em);
+  @include border(0.3em);
+  background: $body-s;
+  border-top-left-radius: 3em 0.5em;
+  border-bottom-left-radius: 3em 1em;
+  transform: rotate(-30deg);
 }
 
 .tail {
@@ -252,11 +255,18 @@ $body-s: #ffd700;
     background: $body-s;
   }
 
-  .tail2 {
+  .tail-arrange {
     @include position(-2.85em 0 0 0.7em);
     @include hw(1.1em, 1.8em);
     background: $body-s;
     z-index: 1;
+
+    &::before {
+      @include position(1.55em 0 0 -1.75em);
+      @include hw(0.5em, 0.83em);
+      content: '';
+      background: #8b4513;
+    }
   }
 }
 
