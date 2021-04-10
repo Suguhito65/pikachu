@@ -221,6 +221,8 @@
           box-shadow: inset 0em 1.5em  #000;
   -webkit-transform: rotate(-10deg);
           transform: rotate(-10deg);
+  -webkit-animation: ear-move .8s infinite alternate ease-in-out;
+          animation: ear-move .8s infinite alternate ease-in-out;
 }
 
 .body {
@@ -332,8 +334,8 @@
   background: #8b4513;
   -webkit-transform: skewX(-10deg) rotate(-20deg);
           transform: skewX(-10deg) rotate(-20deg);
-  -webkit-animation: tail-move .7s infinite alternate ease-in-out;
-          animation: tail-move .7s infinite alternate ease-in-out;
+  -webkit-animation: tail-move 1s infinite alternate ease-in-out;
+          animation: tail-move 1s infinite alternate ease-in-out;
 }
 
 .tail::before {
@@ -394,17 +396,47 @@
   z-index: -1;
 }
 
+@-webkit-keyframes ear-move {
+  10% {
+    -webkit-transform-origin: 50% 60%;
+            transform-origin: 50% 60%;
+    -webkit-transform: rotate(-20deg);
+            transform: rotate(-20deg);
+  }
+  100% {
+    -webkit-transform-origin: 50% 60%;
+            transform-origin: 50% 60%;
+    -webkit-transform: rotate(-20deg);
+            transform: rotate(-20deg);
+  }
+}
+
+@keyframes ear-move {
+  10% {
+    -webkit-transform-origin: 50% 60%;
+            transform-origin: 50% 60%;
+    -webkit-transform: rotate(-20deg);
+            transform: rotate(-20deg);
+  }
+  100% {
+    -webkit-transform-origin: 50% 60%;
+            transform-origin: 50% 60%;
+    -webkit-transform: rotate(-20deg);
+            transform: rotate(-20deg);
+  }
+}
+
 @-webkit-keyframes tail-move {
   100% {
-    -webkit-transform: rotate(2deg);
-            transform: rotate(2deg);
+    -webkit-transform: rotate(10deg);
+            transform: rotate(10deg);
   }
 }
 
 @keyframes tail-move {
   100% {
-    -webkit-transform: rotate(2deg);
-            transform: rotate(2deg);
+    -webkit-transform: rotate(10deg);
+            transform: rotate(10deg);
   }
 }
 /*# sourceMappingURL=style.css.map */

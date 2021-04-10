@@ -164,6 +164,7 @@ $body-s: #ffb700;
   border-top-left-radius: 0.85em 4em;
   box-shadow: inset 0em 1.5em  #000;
   transform: rotate(-10deg);
+  animation: ear-move .8s infinite alternate ease-in-out;
 }
 
 .body {
@@ -237,7 +238,7 @@ $body-s: #ffb700;
   @include border(0.3em);
   background: #8b4513;
   transform: skewX(-10deg) rotate(-20deg);
-  animation: tail-move .7s infinite alternate ease-in-out;
+  animation: tail-move 1s infinite alternate ease-in-out;
   
   &::before {
     @include position(-3.1em 0 0 -0.4em);
@@ -278,8 +279,20 @@ $body-s: #ffb700;
   z-index: -1;
 }
 
-@keyframes tail-move {
+@keyframes ear-move {
+  10% {
+    transform-origin: 50% 60%;
+    transform: rotate(-20deg);
+  }
   100% {
-    transform: rotate(2deg);
+    transform-origin: 50% 60%;
+    transform: rotate(-20deg);
+  }
+}
+
+@keyframes tail-move {
+  
+  100% {
+    transform: rotate(10deg);
   }
 }
