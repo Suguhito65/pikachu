@@ -140,7 +140,7 @@
   height: 1em;
   width: 5em;
   content: '';
-  background: #ffb700;
+  background: #dbb900;
   border-top-left-radius: 3em 1em;
   border-top-right-radius: 2em 1em;
   -webkit-box-shadow: inset 0 0.5em #ffd700;
@@ -214,7 +214,7 @@
   height: 5em;
   width: 1.5em;
   border: 0.2em solid #000;
-  background: #ffb700;
+  background: #dbb900;
   border-top-right-radius: 0.65em 4em;
   border-top-left-radius: 0.85em 4em;
   -webkit-box-shadow: inset 0em 1.5em  #000;
@@ -233,8 +233,8 @@
   border: 0.3em solid #000;
   background: #ffd700;
   border-radius: 40% 20% 20% 30% / 80% 80% 20% 20%;
-  -webkit-box-shadow: inset 0 -0.5em #ffb700;
-          box-shadow: inset 0 -0.5em #ffb700;
+  -webkit-box-shadow: inset 0 -0.5em #dbb900;
+          box-shadow: inset 0 -0.5em #dbb900;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   overflow: hidden;
@@ -299,7 +299,7 @@
   height: 1.5em;
   width: 4em;
   border: 0.3em solid #000;
-  background: #ffb700;
+  background: #dbb900;
   border-top-right-radius: 3em 0.5em;
   border-bottom-right-radius: 3em 1em;
   -webkit-transform: rotate(30deg);
@@ -314,7 +314,7 @@
   height: 1.5em;
   width: 4em;
   border: 0.3em solid #000;
-  background: #ffb700;
+  background: #dbb900;
   border-top-left-radius: 3em 0.5em;
   border-bottom-left-radius: 3em 1em;
   -webkit-transform: rotate(-30deg);
@@ -345,7 +345,7 @@
   width: 2.5em;
   border: 0.3em solid #000;
   content: '';
-  background: #ffb700;
+  background: #dbb900;
 }
 
 .tail::after {
@@ -357,7 +357,7 @@
   width: 5em;
   border: 0.3em solid #000;
   content: '';
-  background: #ffb700;
+  background: #dbb900;
 }
 
 .tail .tail-arrange {
@@ -367,7 +367,7 @@
   margin: -2.85em 0 0 0.7em;
   height: 1.1em;
   width: 1.8em;
-  background: #ffb700;
+  background: #dbb900;
   z-index: 1;
 }
 
@@ -389,7 +389,7 @@
   margin: 6em 0 0 -5.5em;
   height: 2em;
   width: 14em;
-  background: rgba(0, 0, 0, 0.1);
+  background: #aaa;
   border-radius: 50%;
   z-index: -1;
 }
