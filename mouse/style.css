@@ -395,7 +395,7 @@
 }
 
 @-webkit-keyframes ear-move {
-  0% {
+  0%, 20% {
     -webkit-transform-origin: bottom left;
             transform-origin: bottom left;
     -webkit-transform: rotate(0deg);
@@ -406,17 +406,11 @@
             transform-origin: bottom left;
     -webkit-transform: rotate(-10deg);
             transform: rotate(-10deg);
-  }
-  20% {
-    -webkit-transform-origin: bottom left;
-            transform-origin: bottom left;
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
   }
 }
 
 @keyframes ear-move {
-  0% {
+  0%, 20% {
     -webkit-transform-origin: bottom left;
             transform-origin: bottom left;
     -webkit-transform: rotate(0deg);
@@ -427,12 +421,6 @@
             transform-origin: bottom left;
     -webkit-transform: rotate(-10deg);
             transform: rotate(-10deg);
-  }
-  20% {
-    -webkit-transform-origin: bottom left;
-            transform-origin: bottom left;
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
   }
 }
 

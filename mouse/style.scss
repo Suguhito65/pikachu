@@ -278,17 +278,13 @@ $body-s: darken(#ffd700, 7%);
 }
 
 @keyframes ear-move {
-  0% {
+  0%, 20% {
     transform-origin: bottom left;
     transform: rotate(0deg);
   }
   10% {
     transform-origin: bottom left;
     transform: rotate(-10deg);
-  }
-  20% {
-    transform-origin: bottom left;
-    transform: rotate(0deg);
   }
 }
 
